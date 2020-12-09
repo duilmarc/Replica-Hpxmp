@@ -12,8 +12,11 @@ Instalacion git
 	- sudo apt install git
 Instalar cmake
 	- sudo apt install cmake
-Installar wget
-		sudo apt install wget
+Instalar wget
+	- sudo apt install wget
+Instalar dependencias para c++
+	- sudo apt install g++
+	- sudo apt install build-essentials
 HPX:
 / Instalacion Boost
 	- Obtener el boost 
