@@ -48,6 +48,8 @@ HPX:
 	- cmake -DBOOST_ROOT=/home/duilmarc/boost_1_74_0 -DHWLOC_ROOT=/home/duilmarc -DHPX_WITH_MALLOC=system -DCMAKE_INSTALL_PREFIX=~/packages/hpx ..
 	- make install
 
-			
-			
+/ Instalacion de HPXOPENMP
+	Dependencias :
+	- sudo apt-get install clang-3.4
+	cmake -DCMAKE_BUILD_TYPE=Debug/Release \ -DCMAKE_ASM_COMPILER=clang/gcc \ -DCMAKE_CXX_COMPILER=clang++/g++ \-DCMAKE_C_COMPILER=clang \ -DHPX_DIR=/home/duilmarc/packages/hpx/lib/cmake/HPX \ -DCMAKE_CXX_FLAGS=-stdlib=libc++ ..
 
