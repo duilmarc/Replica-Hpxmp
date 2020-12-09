@@ -1,52 +1,50 @@
 Paralelos 
 
-	Google Cloud Linux x86_64
-	
-	8 procesadores fisicos Intel(R) Xeon(R) CPU @ 2.30 GHZ
-	4 procesadores logicos
-	32 gb de Ram
-	
-	Instalacion 
-	
-	Instalacion git
-		- sudo apt install git
-	Instalar cmake
-		- sudo apt install cmake
-	Installar wget
-			sudo apt install wget
-	HPX:
-		/ Instalacion Boost
-		
+Google Cloud Linux x86_64
 
-		- Obtener el boost 
-			wget https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.bz2
-		- Desempaquetar boost
-			tar -xf boost_1_74_0.tar.bz2 
-		- Ingresar a carpeta
-			cd boost_1_74_0
-		- Ejecutar boostrap
-			./bootstrap.sh --prefix=<where to install boost>
-			./b2 install
-		- Guardar la ruta donde instalaste el boost
-			./b2
+8 procesadores fisicos Intel(R) Xeon(R) CPU @ 2.30 GHZ
+4 procesadores logicos
+32 gb de Ram
 
-		/ Instalacion Portable Hardware Locality (HWLOC) Instalacion hwloc
-		
-		- Obtener paquete 
-			wget https://download.open-mpi.org/release/hwloc/v1.11/hwloc-1.11.13.tar.bz2
-		- Desempaquetar 
-		  tar -xf hwloc-1.11.13.tar.bz2
-		- Ubicarte en carpeta
-			cd $HWLOC
-		- ./configure --prefix=<where to install hwloc>
-		- 	make -j<N> install
-		
-		/Instalacion de HPX
-			git clone https://github.com/STEllAR-GROUP/hpx.git 
-			mkdir build && cd build
-			cmake -DBOOST_ROOT=<path_to_files> -DHWLOC_ROOT=<path-to-file> -DCMAKE_INSTALL_PREFIX=~/packages/hpx ..
-			make install
-			
+Instalacion 
+
+Instalacion git
+	- sudo apt install git
+Instalar cmake
+	- sudo apt install cmake
+Installar wget
+		sudo apt install wget
+HPX:
+/ Instalacion Boost
+	- Obtener el boost 
+		wget https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.bz2
+	- Desempaquetar boost
+		tar -xf boost_1_74_0.tar.bz2 
+	- Ingresar a carpeta
+		cd boost_1_74_0
+	- Ejecutar boostrap
+		./bootstrap.sh --prefix=<where to install boost>
+		./b2 install
+	- Guardar la ruta donde instalaste el boost
+		./b2
+
+/ Instalacion Portable Hardware Locality (HWLOC) Instalacion hwloc
+
+	- Obtener paquete 
+		wget https://download.open-mpi.org/release/hwloc/v1.11/hwloc-1.11.13.tar.bz2
+	- Desempaquetar 
+	  tar -xf hwloc-1.11.13.tar.bz2
+	- Ubicarte en carpeta
+		cd $HWLOC
+	- ./configure --prefix=<where to install hwloc>
+	- 	make -j<N> install
+
+/Instalacion de HPX
+	- git clone https://github.com/STEllAR-GROUP/hpx.git 
+	- mkdir build && cd build
+	- cmake -DBOOST_ROOT=/home/duilmarc/boost_1_74_0 -DHWLOC_ROOT=/home/duilmarc -DHPX_WITH_MALLOC=system -DCMAKE_INSTALL_PREFIX=~/packages/hpx ..
+	- make install
+
 			
 			
 
