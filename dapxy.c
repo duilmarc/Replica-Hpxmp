@@ -19,20 +19,26 @@ void daxpy(int n, double a, double *x, double *y, double *z){
 
 
 int main(){ 
-	int n=1e7; 
-	double *x = malloc(sizeof(double)*n);   
-	double *y = malloc(sizeof(double)*n);   
-	double *z = malloc(sizeof(double)*n);   
-	double a = 5./3.; 
-	double start; 
-	double end; 
-	start = omp_get_wtime();	
-	daxpy(n,a,x,y,z);
-	end = omp_get_wtime();    
-	free(x);   
-	free(y);   
-	free(z); 
-	printf("Work took %f seconds\n", end - start);
-	printf("Exiting of the program...\n");
+	int n=1e6; 
+	for( int i = 0 ; i < 4 ; ++i)
+	{
+		double *x = malloc(sizeof(double)*n);   
+		double *y = malloc(sizeof(double)*n);   
+		double *z = malloc(sizeof(double)*n);   
+		double a = 5./3.; 
+		double start; 
+		double end; 
+		start = omp_get_wtime();	
+		daxpy(n,a,x,y,z);
+		end = omp_get_wtime();    
+		free(x);   
+		free(y);   
+		free(z); 
+		printf("Test with %d size\n", n);
+		printf("Work took %f seconds\n", end - start);
+		printf("Exiting test...\n");
+		printf("\n");
+		n= n/10;
+	}
 	return(0);
 }
